@@ -69,6 +69,27 @@ class StateTests(unittest.TestCase):
         self.assertEqual(Path(written['target']).stat().st_mode & 0o777,0o600)
         self.assertEqual(self.data.stat().st_mode & 0o777,0o700)
 
+    def test_failed_input_producer_cannot_create_or_erase_artifact(self):
+        for content in ['', ' \n\t']:
+            self.invoke('write','--kind','plans','--name','plan.md','--run','r1',content=content,ok=False)
+            self.assertFalse(self.data.exists())
+        written=self.invoke('write','--kind','plans','--name','plan.md','--run','r1',content='열린 결정: 인증 제공자\n')
+        self.invoke('write','--kind','plans','--name','plan.md','--run','r1','--replace',content='',ok=False)
+        self.assertEqual(Path(written['target']).read_text(),'열린 결정: 인증 제공자\n')
+
+    def test_file_input_preserves_literal_text_and_verifies_saved_bytes(self):
+        source=self.base/'draft.md'
+        content='설계 초안: `Server` / $literal / $(literal)\n열린 질문: 인증 선택?\n'
+        source.write_text(content)
+        written=self.invoke('write','--kind','plans','--name','draft.md','--run','r1','--file',str(source))
+        self.assertEqual(Path(written['target']).read_text(),content)
+        self.assertEqual(written['bytes'],len(content.encode('utf-8')))
+        self.assertEqual(written['sha256'],hashlib.sha256(content.encode('utf-8')).hexdigest())
+        self.invoke('write','--kind','plans','--name','missing.md','--file',str(self.base/'missing'),ok=False)
+        source.write_text(' \n')
+        self.invoke('write','--kind','plans','--name','draft.md','--run','r1','--replace','--file',str(source),ok=False)
+        self.assertEqual(Path(written['target']).read_text(),content)
+
     def test_repo_roots_and_git_indirection(self):
         worktree = self.base / 'feature-copy'
         self.git('worktree','add','-b','feature/search',str(worktree))

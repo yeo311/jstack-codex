@@ -28,6 +28,8 @@ codex plugin add jstack-codex@jstack-codex-personal
 
 `plugin.json`은 Agent Plugins 1.0.0 root manifest다. `skills/`는 자동 탐지되며 `extensions.com.openai`에 한국어 UI metadata만 둔다. `.codex-plugin` overlay·MCP·hooks·자동 package bootstrap은 없다. CLI는 설치 cache를 읽으므로 source를 수정했다면 marketplace upgrade와 재설치 흐름으로 새 파일을 확인한다. 설치는 개인 marketplace/plugin 항목을 추가하며 모델·sandbox·network·auth를 변경하지 않는다. 기존 설정은 보존한다.
 
+`main`을 추적하는 Git marketplace는 `codex plugin marketplace upgrade jstack-codex-personal`로 갱신한 뒤 재설치한다. 전체 SHA로 고정한 등록의 SHA를 바꿀 때 Codex 0.156.1은 같은 marketplace를 다른 source로 취급한다. 기존 config를 개인 경로에 백업하고 아래 개인 등록 제거 후 새 SHA로 marketplace add·plugin add를 실행한다. 다른 marketplace와 plugin은 건드리지 않는다.
+
 삭제는 개인 등록만 제거한다. 프로젝트 기록을 자동 삭제하지 않는다.
 
 ```sh
@@ -62,7 +64,7 @@ Git common directory의 정규화 경로를 hash해서 같은 clone의 worktree�
 - 프로그램 queue·brief·ledger·gate는 개인 program 경로에 저장한다. 큐는 JSON으로 관리한다.
 - 회사 source 전체·대화·prompt·credentials를 기본 수집하지 않는다. 필요한 근거 경로·symbol·SHA와 짧은 요약만 저장한다. 개인 state를 이 공개 plugin source에 복사하지 않는다.
 
-helper는 root가 repo·Git dir·등록된 worktree와 겹치거나 다른 Git repo 내부이면 거부한다. 상대 경로·경로 이탈·내부 symlink도 거부한다. `--dry-run`은 mkdir도 하지 않는다. 기존 artifact는 `--replace`를 명시해야 갱신된다. project lock과 atomic replace로 동시 log/queue 기록을 보존한다. stale lock은 임의 삭제하지 않는다.
+helper는 root가 repo·Git dir·등록된 worktree와 겹치거나 다른 Git repo 내부이면 거부한다. 상대 경로·경로 이탈·내부 symlink도 거부한다. `--dry-run`은 mkdir도 하지 않는다. `write --file`로 여러 줄 UTF-8 입력을 안전하게 전달할 수 있으며, 저장한 bytes/hash를 반환한다. 빈 입력은 거부하고 기존 artifact는 `--replace`를 명시해야 갱신된다. 저장 응답 뒤에는 본문을 다시 읽어 확인한다. project lock과 atomic replace로 동시 log/queue 기록을 보존한다. stale lock은 임의 삭제하지 않는다.
 
 ```sh
 python3 skills/jstack-mode/scripts/jstack.py --repo /absolute/path/to/project context

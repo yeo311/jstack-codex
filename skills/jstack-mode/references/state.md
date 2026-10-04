@@ -13,7 +13,7 @@ python3 <helper> --repo <repo> write --kind understanding --name overview.md
 python3 <helper> --repo <repo> read --kind understanding --name overview.md
 ```
 
-`write`는 표준 입력을 저장한다. 이미 있는 파일은 실패한다. 읽고 갱신 범위를 정한 경우에만 `--replace`를 쓴다. `path`는 경로를 알려줄 뿐 디렉터리를 만들지 않는다. 증거를 저장할 상위 디렉터리가 필요하면 `write`로 해당 kind의 작은 index 파일을 먼저 만든다. runtime state는 공개 plugin Git tree에 넣지 않는다. 대량 소스를 복사하지 말고 필요한 경로·symbol·commit·근거 요약을 기록한다. 사용자 prompt나 비밀값은 기본 기록 대상이 아니다.
+`write`는 `--file /absolute/private/draft.md`로 UTF-8 파일을 읽거나 옵션 없이 표준 입력을 저장하고 빈 입력·공백만 있는 입력을 거부한다. 이미 있는 파일은 실패한다. 읽고 갱신 범위를 정한 경우에만 `--replace`를 쓴다. `path`는 경로를 알려줄 뿐 디렉터리를 만들지 않는다. 증거를 저장할 상위 디렉터리가 필요하면 `write`로 해당 kind의 작은 index 파일을 먼저 만든다. 여러 줄 내용은 개인 임시 파일에 작성해 `--file`로 전달하는 방식을 우선 사용한다. 저장 응답의 `bytes`와 `sha256`은 실제 다시 읽은 bytes를 검증하지만 내용의 의미를 증명하지는 않는다. quoted heredoc을 써도 되며, pipeline을 쓴다면 입력 생성 단계의 실패도 확인한다. helper의 저장 응답만으로 내용이 올바르다고 판단하지 않는다. 같은 kind/name/run으로 `read`를 실행해 본문이 비어 있지 않고 기대한 SHA·근거·열린 결정이 들어 있는지 확인한 뒤 저장 완료를 알린다. 실패한 검증은 구분해서 기록한다. runtime state는 공개 plugin Git tree에 넣지 않는다. 대량 소스를 복사하지 말고 필요한 경로·symbol·commit·근거 요약을 기록한다. 사용자 prompt나 비밀값은 기본 기록 대상이 아니다.
 
 기본 위치는 `~/.local/share/jstack`, Windows는 `LOCALAPPDATA/jstack`다. `XDG_DATA_HOME/jstack`을 존중하며 `JSTACK_DATA_HOME`은 최우선 절대 경로 override다. repo·Git dir·등록된 worktree와 겹치는 root, 다른 Git 저장소 내부 root, 상대 경로, 내부 symlink를 거부한다. Git common dir hash는 같은 clone의 worktree를 묶고 별도 clone은 별도 ID로 만든다. `branches/<branch-hash>/runs/<run-id>/`는 분기·실행 상태를 나눈다. 공유 지도는 project별이고 기록·프로그램 상태는 branch별이다.
 

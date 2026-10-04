@@ -204,6 +204,7 @@ def main(argv=None):
         p.add_argument('--name', required=True)
         p.add_argument('--run')
         if command == 'write':
+            p.add_argument('--file', help='UTF-8 입력 파일. 생략하면 표준 입력을 읽음')
             p.add_argument('--replace', action='store_true', help='기존 파일 갱신을 명시적으로 허용')
     p = commands.add_parser('log', help='판단과 근거 기록 추가')
     p.add_argument('--run', required=True)
@@ -246,12 +247,19 @@ def main(argv=None):
                 print(target.read_text(encoding='utf-8'), end='')
                 return
         elif args.command == 'write' and not args.dry_run:
-            content = sys.stdin.read()
+            content = Path(args.file).read_text(encoding='utf-8') if args.file else sys.stdin.read()
+            if not content.strip():
+                raise ValueError("빈 기록은 저장하지 않습니다. 입력 생성 명령이 성공했는지 확인하세요.")
             with lock(root, project):
                 check_tree(root, target)
                 if target.exists() and not args.replace:
                     raise ValueError('기존 산출물이 있습니다. 갱신은 --replace로 명시하세요.')
                 atomic(root, target, content)
+                saved = target.read_bytes()
+                if saved != content.encode("utf-8"):
+                    raise ValueError("저장한 본문이 입력과 다릅니다.")
+                response["bytes"] = len(saved)
+                response["sha256"] = hashlib.sha256(saved).hexdigest()
     elif args.command == 'log':
         target = project / 'branches' / info['branch_id'] / 'runs' / slug(args.run) / 'decisions.jsonl'
         if not args.dry_run:
