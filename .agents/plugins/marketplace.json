@@ -1,0 +1,20 @@
+{
+  "name": "jstack-codex-personal",
+  "interface": {
+    "displayName": "jstack-codex 개인 플러그인"
+  },
+  "plugins": [
+    {
+      "name": "jstack-codex",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

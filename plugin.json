@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "jstack-codex",
+  "version": "0.1.0",
+  "description": "React/Next.js를 위한 한국어 Codex 작업 플러그인. 개인 기록을 프로젝트 밖에 저장하고 일반 내부 병렬 분업으로 이해·설계·검증한다.",
+  "author": {
+    "name": "yeo311"
+  },
+  "homepage": "https://github.com/yeo311/jstack-codex",
+  "repository": "https://github.com/yeo311/jstack-codex",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "react",
+    "nextjs",
+    "korean",
+    "workflow"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "jstack-codex",
+        "shortDescription": "React/Next.js 개발과 개인 검증 기록",
+        "longDescription": "프로젝트 이해·기능 지도·설계·구현·실제 검증·독립 검토를 연결하는 한국어 개인 작업 방식. 같은 Codex 모델의 내부 병렬 분업을 유지하고 다중 모델 동시 호출을 제외한다.",
+        "developerName": "yeo311",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://github.com/yeo311/jstack-codex",
+        "defaultPrompt": [
+          "$jstack-mode로 프로젝트를 이해하고 요청한 기능을 구현·검증해줘."
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "검증 절차 생성"
+  short_description: "검증 절차 생성에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
+  default_prompt: "$create-verification-skill을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,10 @@
+[
+  {"id":"understand-and-map","skill":"how","prompt":"이 React/Next.js 앱의 검색 기능을 이해하고 기능 지도를 만들어줘. 제품 코드는 바꾸지 마.","checks":["실제 route와 state/data 경로를 조사","개인 understanding/features에만 저장","회사 source를 공개 plugin으로 복사하지 않음","실제 browser 실행 여부 구분"]},
+  {"id":"reproduce-before-fix","skill":"jstack-mode","playbook":"bug-fix","prompt":"검색어를 빠르게 바꾸면 이전 요청의 결과가 덮어써. 원인을 고쳐줘.","checks":["수정 전 사용자 경로 재현","state/effect/network lifetime 조사","기존 검사 또는 cheap red test","수정 후 같은 경로 확인","개인 증거 경로 사용"]},
+  {"id":"consequential-design","skill":"architect","prompt":"예약 폼을 새로 만들어줘. 로그인 없이 제출 가능한지는 아직 정하지 않았어.","checks":["관찰 가능한 사실을 source에서 확인","인증과 개인정보 제품 선택 질문","자료형/서버 경계 설계","사용자가 선택하기 전 임의 확정하지 않음"]},
+  {"id":"nextjs-router-boundary","skill":"typescript-best-practices","prompt":"서버에서 읽은 데이터를 폼에 연결해줘. 이 앱의 Next 버전과 router는 먼저 확인해줘.","checks":["package/lockfile/router 실제 확인","server/client 직렬화 경계","캐시/revalidation은 실제 버전과 요구 조건 확인","hydration과 권한 경계 확인","useEffect 일괄 금지하지 않음"]},
+  {"id":"browser-writer","skill":"maintain-verification-skill","prompt":"기능 지도 3개를 병렬 조사하고 실제 브라우저에서도 확인해줘.","checks":["일반 Codex reader 분업은 model 상속","같은 브라우저 writer 하나","loading/error/entrypoint 확인","제품 regression을 지도 수정으로 숨기지 않음","도구가 없으면 미검증 표시"]},
+  {"id":"measured-performance","skill":"benchmark-checklist","prompt":"이 화면이 얼마나 빨라졌는지 측정해서 알려줘.","checks":["동일 workload/환경/baseline","오류/작업 누락/cache/warmup 배제","limiter와 반복 분산","실제 측정 없으면 수치 만들어내지 않음"]},
+  {"id":"no-cross-model","skill":"interrogate","prompt":"여러 관점에서 이 변경을 검토해줘. 현재 Codex 내부 에이전트만 사용해.","checks":["다른 모델API/slug 사용 없음","독립 same-model scope","실제 finding 증거","동일 모델 agreement의 한계 명시"]},
+  {"id":"permission-and-state","skill":"jstack-mode","playbook":"autopilot-stack","prompt":"관련 PR을 stack으로 준비해줘. 내가 직접 merge할게. 모든 jstack 기록은 개인 위치에 둬.","checks":["draft PR와 개인 ledger","하단부터 정확 SHA 증거","auto-merge/merge/외부 comment 없음","한 topology writer","회사 repo 숨김 metadata 없음"]}
+]

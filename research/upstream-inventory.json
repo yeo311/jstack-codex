@@ -1,0 +1,484 @@
+{
+  "upstream_repository": "https://github.com/cursor/plugins",
+  "upstream_commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+  "upstream_version": "0.15.9",
+  "license": "MIT",
+  "license_copyright": "Copyright (c) 2026 Lauren Tan",
+  "skills": [
+    {
+      "upstream": "architect",
+      "purpose_ko": "구현 전 자료형·인터페이스·모듈 경계를 설계하고 근거를 비교한다.",
+      "proposed_status": "재작성",
+      "target": "architect",
+      "rationale_ko": "현재 Codex 모델을 상속한다. 개인 맥락을 불필요하게 조회하지 않고 필요한 근거만 읽는다.",
+      "bytes": 5675,
+      "sha256": "741901140ee382ebf93263a7ed03c6ee3719e578416d81afcd195876fa16c496"
+    },
+    {
+      "upstream": "arena",
+      "purpose_ko": "서로 다른 모델의 후보를 동시에 실행하고 선택·합성한다.",
+      "proposed_status": "진입점 제거·분업 재배치",
+      "target": "jstack-mode의 내부 병렬 분업",
+      "rationale_ko": "다중 모델 경쟁은 제거한다. 독립 scope의 일반 Codex 병렬 작업은 유지한다.",
+      "bytes": 4973,
+      "sha256": "e3a1f6c49a08b7e0b92134e53300d146f1f22ba83386d2019926e736df421851"
+    },
+    {
+      "upstream": "automate-me",
+      "purpose_ko": "반복되는 개인 선호를 작업 스킬로 만든다.",
+      "proposed_status": "재작성",
+      "target": "automate-me",
+      "rationale_ko": "현재 Codex 모델을 상속한다. 개인 맥락을 불필요하게 조회하지 않고 필요한 근거만 읽는다.",
+      "bytes": 7164,
+      "sha256": "1510979b0b71b54284427a19c09918f8b1fdfc168f9b7f9e30098793a5ec88ef"
+    },
+    {
+      "upstream": "benchmark-checklist",
+      "purpose_ko": "측정 조건·병목·오류·반복 가능성을 확인한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "benchmark-checklist",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 5409,
+      "sha256": "6a767e788a60428fa14e645ee10fe2e49896e514ff654f668b1d824deb9038e8"
+    },
+    {
+      "upstream": "blast-radius",
+      "purpose_ko": "변경 밖의 영향 경로와 회귀 위험을 실행 증거로 확인한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "blast-radius",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 3851,
+      "sha256": "5f02db9101ccf26c20254718f0fcd5c2c7ac5d4292b0e0923d0944ac47237aff"
+    },
+    {
+      "upstream": "bro",
+      "purpose_ko": "직전 설명을 쉬운 말로 풀어쓴다.",
+      "proposed_status": "유지·한국어화",
+      "target": "bro",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 267,
+      "sha256": "aa329d0ceeeecb6822a7174ad76bb07a7826a3c52ceb6a588dec4138815084bb"
+    },
+    {
+      "upstream": "correct",
+      "purpose_ko": "반복 오류를 구조·자료형·검사로 예방한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "correct",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 2445,
+      "sha256": "bf482bacc972b3f124a4af8bf9364b4b3e280cb5845e44c326ea4f4565e5c904"
+    },
+    {
+      "upstream": "create-verification-skill",
+      "purpose_ko": "실제 앱을 조작하는 검증 절차와 기능 지도를 생성한다.",
+      "proposed_status": "재작성",
+      "target": "create-verification-skill",
+      "rationale_ko": "생성되는 지도·검증 스킬·계획·기록은 개인 state에 둔다. 요청된 제품 변경은 별도 경로에서 수행한다.",
+      "bytes": 5879,
+      "sha256": "644f2551403c1bca01a2855b34611b6e7be0ce0dc5b204514c376c0f6a6e6ac4"
+    },
+    {
+      "upstream": "figure-it-out",
+      "purpose_ko": "맞는 작업 절차가 없을 때 관찰 가능한 완료 조건과 단계별 실험을 설계한다.",
+      "proposed_status": "재작성",
+      "target": "figure-it-out",
+      "rationale_ko": "생성되는 지도·검증 스킬·계획·기록은 개인 state에 둔다. 요청된 제품 변경은 별도 경로에서 수행한다.",
+      "bytes": 4059,
+      "sha256": "0eb9485f0e7d84fee56b5d0f0af0faf4635e3ca87c8cba3970c01293b76ecc19"
+    },
+    {
+      "upstream": "how",
+      "purpose_ko": "코드의 실행 흐름·소유 경계·위치를 이해한다.",
+      "proposed_status": "재작성",
+      "target": "how",
+      "rationale_ko": "현재 Codex 모델을 상속한다. 개인 맥락을 불필요하게 조회하지 않고 필요한 근거만 읽는다.",
+      "bytes": 3077,
+      "sha256": "d31805589c7f6a63a6db6c9fadebbd79fb9660682cf1654e9b2e5e1e7cd30bc0"
+    },
+    {
+      "upstream": "interrogate",
+      "purpose_ko": "여러 모델이 독립 관점에서 설계·변경을 비판한다.",
+      "proposed_status": "재작성",
+      "target": "interrogate",
+      "rationale_ko": "다른 모델 panel을 제거하고 현재 Codex 모델을 상속하는 독립 검토로 바꾼다.",
+      "bytes": 5054,
+      "sha256": "59d498c3e9848a24b2d105eb3f05b808aa4152adf4cb1de7bbb6aff4f4cd9b68"
+    },
+    {
+      "upstream": "maintain-verification-skill",
+      "purpose_ko": "기능별 소스 조사와 실제 조작으로 검증 지도 차이를 고친다.",
+      "proposed_status": "재작성",
+      "target": "maintain-verification-skill",
+      "rationale_ko": "현재 Codex 모델을 상속한다. 개인 맥락을 불필요하게 조회하지 않고 필요한 근거만 읽는다.",
+      "bytes": 4922,
+      "sha256": "515c0eaa054b3f6be1b1fb06f2c2f173c80fddb58bbcac57576f89c479bc68e8"
+    },
+    {
+      "upstream": "make-bot-ui",
+      "purpose_ko": "Cursor Grok Bot webhook을 호출하는 UI와 Tailscale 접근을 만든다.",
+      "proposed_status": "어댑터 재설계 제안",
+      "target": "make-bot-ui",
+      "rationale_ko": "Cursor webhook/Grok/Tailscale 자동 설정은 Codex에서 직접 호환되지 않는다. 명시된 webhook 기반 React UI만 일반화할지 결정이 필요하다.",
+      "bytes": 4649,
+      "sha256": "3624c8ef16cf2e48deb2a4049e72c6962a9431c8d6c6af90e7bd7ea0375224ec"
+    },
+    {
+      "upstream": "no-comments",
+      "purpose_ko": "불필요한 주석을 지우고 필요한 제약을 코드로 표현한다.",
+      "proposed_status": "재작성",
+      "target": "no-comments",
+      "rationale_ko": "현재 Codex 모델을 상속한다. 개인 맥락을 불필요하게 조회하지 않고 필요한 근거만 읽는다.",
+      "bytes": 2560,
+      "sha256": "5c5b0882297d704c3a9720c52b7a793c68b013eaf717989f0945624efdfe2b05"
+    },
+    {
+      "upstream": "poteto-mode",
+      "purpose_ko": "작업 종류를 절차·원칙·모델 역할·검증 규칙에 연결한다.",
+      "proposed_status": "재작성·이름 변경",
+      "target": "jstack-mode",
+      "rationale_ko": "Cursor Task·모델 slug·전역 rule을 제거하고 내부 Codex 분업과 React/Next.js 절차로 연결한다.",
+      "bytes": 20559,
+      "sha256": "404c0ef4a78e93451b2ab555ca532e7197b5cf87de29205b6f7109dbee5d9c4d"
+    },
+    {
+      "upstream": "principle-attack-the-premise",
+      "purpose_ko": "반복 실패를 만드는 공통 전제를 다시 확인한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-attack-the-premise",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1941,
+      "sha256": "c87bd7536f772f8a403ad8155535ee17a1bbec9a353156693eb3bb1520c87ae3"
+    },
+    {
+      "upstream": "principle-boundary-discipline",
+      "purpose_ko": "외부 입력을 경계에서 검증하고 내부 로직을 단순화한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-boundary-discipline",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1883,
+      "sha256": "62ac2862c2caa22dd14531f51c9c6bb445ceb198ca98a687e25b4d47c1f10a28"
+    },
+    {
+      "upstream": "principle-build-the-lever",
+      "purpose_ko": "반복 작업이나 증명을 재실행 가능한 도구로 만든다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-build-the-lever",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 2458,
+      "sha256": "458b269eab8e95a1573276955312f7d2a13ae8599879a9efc748248f6bc34b56"
+    },
+    {
+      "upstream": "principle-encode-lessons-in-structure",
+      "purpose_ko": "반복 지침을 자료형·검사·스크립트로 표현한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-encode-lessons-in-structure",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 2211,
+      "sha256": "77044c83a9ac6df78fc643887ea5f1f11f082adaf14b717c060cdaed03cce863"
+    },
+    {
+      "upstream": "principle-exhaust-the-design-space",
+      "purpose_ko": "새로운 설계는 구조가 다른 소수의 대안을 비교한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-exhaust-the-design-space",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1152,
+      "sha256": "8583310d7297b7823d75494faa57b003564d436807febecdecbd8321abe5cf6e"
+    },
+    {
+      "upstream": "principle-experience-first",
+      "purpose_ko": "사용자 경험에 맞춰 기능 범위와 품질을 선택한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-experience-first",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1184,
+      "sha256": "58903529d733b1c1a7c9ccf127d45ef3c7d0d9f0b81164a4dc6b80efe6f2912b"
+    },
+    {
+      "upstream": "principle-explain-the-number",
+      "purpose_ko": "측정값이 무엇을 측정했는지 설명하고 병목을 확인한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-explain-the-number",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 2109,
+      "sha256": "5aac99e7ce0bb1b37e2579acf4fe88c32a1456d9d46afd4a57cfe1df9092e89c"
+    },
+    {
+      "upstream": "principle-fix-root-causes",
+      "purpose_ko": "재현 후 증상이 아닌 원인을 고친다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-fix-root-causes",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1246,
+      "sha256": "ba4cd38da1dcc8fe5432feb64457cba95594736a9b21b2ebf8f8c52aee068707"
+    },
+    {
+      "upstream": "principle-foundational-thinking",
+      "purpose_ko": "자료 구조와 상태 소유권을 먼저 정한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-foundational-thinking",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1530,
+      "sha256": "864b827e8199d946ce58beca0f89c4ed4099ed6e426fb698a3aaa45de2a9eea2"
+    },
+    {
+      "upstream": "principle-guard-the-context-window",
+      "purpose_ko": "큰 결과는 필요한 근거와 요약만 전달한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-guard-the-context-window",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 939,
+      "sha256": "d2cef147862576e3d709b7afc149d85196245e8338b9c7eef337c95fba412b3e"
+    },
+    {
+      "upstream": "principle-laziness-protocol",
+      "purpose_ko": "작은 변경과 삭제를 먼저 고려한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-laziness-protocol",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1371,
+      "sha256": "9006579e9e3f33955d17569733db688ae65f22577dc3b21803d219a5a8445aff"
+    },
+    {
+      "upstream": "principle-make-operations-idempotent",
+      "purpose_ko": "반복 실행과 중단 후 재실행이 같은 결과로 수렴하게 한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-make-operations-idempotent",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1390,
+      "sha256": "540738217c3da7bf513b9886924ad6a2bc77e58be867f5bd2e1831c74bf2ce70"
+    },
+    {
+      "upstream": "principle-migrate-callers-then-delete-legacy-apis",
+      "purpose_ko": "사용처를 옮긴 뒤 오래된 내부 API를 삭제한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-migrate-callers-then-delete-legacy-apis",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1146,
+      "sha256": "09978915a4a11990cf0a9a02d9c08cc59e0b7a04c5c24b83aa560fbe4146f75b"
+    },
+    {
+      "upstream": "principle-minimize-reader-load",
+      "purpose_ko": "호출 층과 숨은 상태를 줄여 코드를 읽기 쉽게 한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-minimize-reader-load",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 2095,
+      "sha256": "42551c5dc74cd578163c148da552db3ff67d29b78600ef216bfd311fb828fe69"
+    },
+    {
+      "upstream": "principle-model-the-domain",
+      "purpose_ko": "업무 규칙을 명확한 자료 구조·상태 모델로 표현한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-model-the-domain",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 2082,
+      "sha256": "bbadbb9a723fac3f76e782ae45665eb94058ec10993e4bae36d4dc6b0e4eac07"
+    },
+    {
+      "upstream": "principle-never-block-on-the-human",
+      "purpose_ko": "이미 승인된 가역적 작업은 진행하되 실제 결정권은 존중한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-never-block-on-the-human",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1172,
+      "sha256": "f2764bb9338cbfc788c903cf4b9cd0a5f4042d3a04dd6d59cbd525d9beaadd0a"
+    },
+    {
+      "upstream": "principle-outcome-oriented-execution",
+      "purpose_ko": "목표 구조에 맞춰 단계와 검증을 설계한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-outcome-oriented-execution",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1078,
+      "sha256": "10eb91633aa570355ba4bb37088fcade2b22e498df7a58edc749e65bc5a78e2d"
+    },
+    {
+      "upstream": "principle-prove-it-works",
+      "purpose_ko": "완료 전에 실제 결과물과 사용자 경로로 확인한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-prove-it-works",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1371,
+      "sha256": "ec79a15025bac8d33d62011c54f3b612733fd2a024e623b531b3637aa75070e2"
+    },
+    {
+      "upstream": "principle-redesign-from-first-principles",
+      "purpose_ko": "새 요구를 처음부터 있던 제약처럼 설계에 반영한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-redesign-from-first-principles",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 844,
+      "sha256": "a1c7fd0a96b40e12a74bceb0e6bb20a9666dd844dcabfb624acb27da23b929fe"
+    },
+    {
+      "upstream": "principle-separate-before-serializing-shared-state",
+      "purpose_ko": "공유 쓰기를 줄이고 각 작업의 소유권을 분리한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-separate-before-serializing-shared-state",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1565,
+      "sha256": "05294b40448e927c5da1c7b6f5c6b9fed3744637e3833d2d948b9154a9dd00bb"
+    },
+    {
+      "upstream": "principle-sequence-verifiable-units",
+      "purpose_ko": "작은 검증 단위로 순서를 만들고 매 단위 결과를 확인한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-sequence-verifiable-units",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1705,
+      "sha256": "2ccbbacc56ace5afdfb8670cef19d7bd009fb2a0033b9a741cbdf2b6baf72187"
+    },
+    {
+      "upstream": "principle-subtract-before-you-add",
+      "purpose_ko": "불필요한 코드·검사를 정리한 뒤 필요한 것을 추가한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-subtract-before-you-add",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 1094,
+      "sha256": "a983a50e732c1ed315eba7aaf47a61329e31c4794eb1ab9d25d9945265b31e03"
+    },
+    {
+      "upstream": "principle-test-behavior-not-implementation",
+      "purpose_ko": "구현 형태 대신 사용자가 관찰하는 동작을 검사한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-test-behavior-not-implementation",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 2575,
+      "sha256": "87e40efe4e486f7ea639d2ed1fc0abe6c93b8fd0e89a81218086909d2470a52e"
+    },
+    {
+      "upstream": "principle-type-system-discipline",
+      "purpose_ko": "불가능한 상태를 막는 자료형과 외부 입력 검증을 사용한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "principle-type-system-discipline",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 4922,
+      "sha256": "c83da8031ffb4c86410030d3e261f659598fca2b7d8158fd9dc269d70a3a025e"
+    },
+    {
+      "upstream": "recall",
+      "purpose_ko": "현재 작업 맥락과 남은 일을 근거로 복원한다.",
+      "proposed_status": "재작성",
+      "target": "recall",
+      "rationale_ko": "현재 Codex 모델을 상속한다. 개인 맥락을 불필요하게 조회하지 않고 필요한 근거만 읽는다.",
+      "bytes": 5212,
+      "sha256": "d265b0e5b6dc5b89c0407f3387d24462c988e1990a37d5359735137908128c5a"
+    },
+    {
+      "upstream": "reflect",
+      "purpose_ko": "최근 작업의 교훈을 기존 스킬 변경에 연결한다.",
+      "proposed_status": "재작성",
+      "target": "reflect",
+      "rationale_ko": "현재 Codex 모델을 상속한다. 개인 맥락을 불필요하게 조회하지 않고 필요한 근거만 읽는다.",
+      "bytes": 4982,
+      "sha256": "36efa48cc4ec2ba6f8131651aae24c6321682b098ed47a1069a7509462bf4a84"
+    },
+    {
+      "upstream": "setup-pstack",
+      "purpose_ko": "Cursor 전역 모델 역할 규칙과 reasoning 예산을 설정한다.",
+      "proposed_status": "재작성·이름 변경",
+      "target": "setup-jstack",
+      "rationale_ko": "모델 역할 설정 대신 개인 저장소 위치·검증 환경을 읽기 점검한다. 전역 설정 변경은 설치 요청으로 한정한다.",
+      "bytes": 5548,
+      "sha256": "125dd0c8f588782cfb271efae8f97a0719e43e79f56b3495c095f460bcee6389"
+    },
+    {
+      "upstream": "show-me-your-work",
+      "purpose_ko": "중요한 판단·이유·근거·결과를 재검토 가능한 기록으로 남긴다.",
+      "proposed_status": "재작성",
+      "target": "show-me-your-work",
+      "rationale_ko": "생성되는 지도·검증 스킬·계획·기록은 개인 state에 둔다. 요청된 제품 변경은 별도 경로에서 수행한다.",
+      "bytes": 6418,
+      "sha256": "bcff5f7f9fd23f92c12b251f9cd6b947e9485e1055cfacb6fdd9cae0789d7550"
+    },
+    {
+      "upstream": "swarm",
+      "purpose_ko": "병렬 작업자를 분업·경쟁·검증에 배치하고 결과를 집계한다.",
+      "proposed_status": "진입점 제거·분업 재배치",
+      "target": "jstack-mode의 내부 병렬 분업",
+      "rationale_ko": "다중 모델 경쟁은 제거한다. 독립 scope의 일반 Codex 병렬 작업은 유지한다.",
+      "bytes": 2949,
+      "sha256": "bdcee4168e22428036e93d7cdeec3f391dbc4132f927f6db2540328c22db0273"
+    },
+    {
+      "upstream": "tdd",
+      "purpose_ko": "필요한 회귀 시나리오에서 실패 검사 후 최소 변경으로 고친다.",
+      "proposed_status": "유지·한국어화",
+      "target": "tdd",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 3143,
+      "sha256": "eeb868e2dfebee528d730a67d7b17498fac4bb85dec2e38bc5c5176aca4d5d2f"
+    },
+    {
+      "upstream": "teach",
+      "purpose_ko": "실행 구조와 설계 이유를 연결해 사람이 이해할 수 있게 설명한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "teach",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 5623,
+      "sha256": "bd286e5a6290673be2cd28aef7af2ec7f1fb138e6bce156ea657368c7e7fc8a4"
+    },
+    {
+      "upstream": "technical-writing",
+      "purpose_ko": "독자와 목적에 맞춰 문서·설계안·PR 설명을 작성한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "technical-writing",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 9792,
+      "sha256": "f5c512ffeec70bc4e0dee50f7bb4c26742e1be77967a6e8b15d1921e1c209ceb"
+    },
+    {
+      "upstream": "typescript-best-practices",
+      "purpose_ko": "TypeScript 자료형·추론·예외 처리 규칙을 적용한다.",
+      "proposed_status": "유지·한국어화",
+      "target": "typescript-best-practices",
+      "rationale_ko": "동작을 보존하고 React/Next.js 예시에 맞춘다.",
+      "bytes": 2684,
+      "sha256": "28f9e61710e205f6f3c5476f333483cff0e988f6a5b639e2faad536344b40c5e"
+    },
+    {
+      "upstream": "unslop",
+      "purpose_ko": "기계적인 문체와 불필요한 장황함을 줄인다.",
+      "proposed_status": "재작성",
+      "target": "unslop",
+      "rationale_ko": "영어 금지어 목록을 한국어 문장·번역투·리듬 기준으로 대체한다.",
+      "bytes": 6015,
+      "sha256": "195411d320b5b328f9f642baf59757ed19aaf0931c0838740e0aca273d538dc1"
+    },
+    {
+      "upstream": "why",
+      "purpose_ko": "Git·문서·이슈 등 근거에서 설계 선택의 이유를 확인한다.",
+      "proposed_status": "재작성",
+      "target": "why",
+      "rationale_ko": "현재 Codex 모델을 상속한다. 개인 맥락을 불필요하게 조회하지 않고 필요한 근거만 읽는다.",
+      "bytes": 10360,
+      "sha256": "2a852ec8680920109d2b56538b027c52867896a597250ac5d18a13e0b42e5b06"
+    }
+  ],
+  "playbooks": [
+    "authoring-a-skill",
+    "autonomous-run",
+    "autopilot-full",
+    "autopilot-stack",
+    "babysit",
+    "bug-fix",
+    "eval",
+    "feature",
+    "hillclimb",
+    "investigation",
+    "multi-phase-plan",
+    "opening-a-pr",
+    "orchestrate",
+    "pause-safely",
+    "perf-issue",
+    "prototype",
+    "refactoring",
+    "runtime-forensics",
+    "session-pickup",
+    "shipping",
+    "trace-forensics",
+    "visual-parity",
+    "worktree-cleanup"
+  ]
+}
