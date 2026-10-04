@@ -1,0 +1,41 @@
+{
+  "purpose_ko": "원본 플랫폼 지시가 현재 실행 surface에 다시 유입되는지 검사하는 감사 어휘. 과거 출처를 삭제하는 규칙이 아니다.",
+  "patterns": [
+    {
+      "id": "legacy-platform",
+      "regex": "cursor",
+      "ignore_case": true
+    },
+    {
+      "id": "legacy-tool",
+      "regex": "\\b(?:Task|AskQuestion)\\b|\\b(?:control-ui|control-cli|create-skill|deslop)\\b",
+      "ignore_case": false
+    },
+    {
+      "id": "legacy-rule-file",
+      "regex": "\\.mdc\\b|agent-transcripts|\\.cursor(?:/|\\\\)",
+      "ignore_case": true
+    },
+    {
+      "id": "external-model-role",
+      "regex": "\\b(?:grok|gemini|claude|sonnet|opus)\\b",
+      "ignore_case": true
+    },
+    {
+      "id": "legacy-stack-tool",
+      "regex": "\\bGraphite\\b|\\bOrigin\\s+(?:agent|agents|run|submit|stack|launch)\\b",
+      "ignore_case": false
+    },
+    {
+      "id": "project-specific-context",
+      "regex": "\\b(?:Dune|Tailscale)\\b",
+      "ignore_case": false
+    }
+  ],
+  "historical_readme_sections": [
+    "pstack와 달라진 점",
+    "원본 50개 항목 결과",
+    "원본 23개 절차 결과",
+    "Lauren Tan의 의도와 이번 선택"
+  ]
+}

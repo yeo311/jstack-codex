@@ -1,5 +1,6 @@
 # 고정 원본과 조사 결과
 
+이 문서는 고정 커밋의 원본 의존성과 이식 판단을 남기는 역사적 조사 기록이다. 현재 실행은 README의 설치·사용 절과 skills의 Codex 지침을 따른다.
 원본은 [cursor/plugins의 pstack](https://github.com/cursor/plugins/tree/e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a/pstack), 커밋 `e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a`, 버전 0.15.9다. 50개 스킬과 23개 절차를 조사했다. [원본 inventory](upstream-inventory.json)에 각 스킬 원본 SHA256을 보존했다.
 
 MIT 저작권 `Copyright (c) 2026 Lauren Tan`과 허가·무보증 고지를 [원본 LICENSE](UPSTREAM-LICENSE.txt) 및 프로젝트 LICENSE에 유지했다. 원본 로고·브랜드를 복제하지 않고 적응 사실을 NOTICE에 밝혔다.

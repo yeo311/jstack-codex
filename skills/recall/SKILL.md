@@ -22,7 +22,7 @@ description: "현재 작업 맥락과 남은 일을 근거로 복원한다. 해�
 
 특정 prior session 하나의 재개는 session-pickup, 선호를 영구 스킬로 만드는 작업은 automate-me로 구분한다. 사용자가 완전한 state capsule을 주면 새 기록 수집을 생략한다. 그 외는 topic·workspace·기간을 고정하고 '최근' 기본은 7일로 명시한다. 사용자의 '전체' 요청을 말없이 최근 몇 건으로 줄이지 않는다.
 
-가용 Codex thread/history 도구나 사용자가 지정한 기록만 조회한다. 실제 수정 시각으로 관련 후보를 정하고 topic을 먼저 찾은 뒤 해당 구간만 읽는다. 현재 chat와 noise/agent/eval 대화는 제외한다. 실제로 무엇을 실행했는지가 중요하면 요약만으로 판단하지 않고 관련 full record를 확인한다. 없는 Cursor transcript 경로를 Codex에 적용하지 않는다.
+가용 Codex thread/history 도구나 사용자가 지정한 기록만 조회한다. 실제 수정 시각으로 관련 후보를 정하고 topic을 먼저 찾은 뒤 해당 구간만 읽는다. 현재 chat와 noise/agent/eval 대화는 제외한다. 실제로 무엇을 실행했는지가 중요하면 요약만으로 판단하지 않고 관련 full record를 확인한다. 기록 도구가 없거나 접근할 수 없으면 개인 jstack 기록과 현재 Git 상태로 복원하고 확인하지 못한 대화는 미확인으로 남긴다. 세션 파일 경로를 추측해 읽지 않는다.
 
 named feature/bug/subsystem은 why의 관련 shared-record 범주에서 현재 상태·되돌린 fix·반복 사용자 증상을 확인하고 null/접근 불가를 기록한다. pure 활동 회고는 개인 기록과 live 상태만으로 끝낼 수 있다. 주변 feature는 이 작업을 막을 때만 포함한다.
 

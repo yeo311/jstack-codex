@@ -87,6 +87,8 @@ python3 scripts/validate.py
 python3 -m unittest discover -s tests -v
 ```
 
+[0.1.3 이식 감사 기록](docs/PORTING-AUDIT.md)에 수정 전 검색·분류·실제 오류·변경 이유를 남겼다. `python3 scripts/audit_runtime.py`는 현재 실행 지시의 원본 전용 의존을 검사하며 CI의 validate에도 포함된다. 역사 자료와 정상 API 용어를 구분하고 의미 감사·모델 행동 검증을 대체하지 않는다.
+
 개발 검사는 manifest schema·47개 스킬·23개 절차·한국어 metadata·상대 link·50개 대응을 확인한다. helper integration tests는 임시 Git 프로젝트에서 dry-run 무쓰기, source hash와 git status, worktree ID, 경로 이탈·symlink 거부, 동시 기록, SHA 기록을 확인한다. plan/PR checker의 실패 사례도 실행한다. [행동 평가 시나리오](tests/eval-scenarios.json)는 model 평가를 위한 rubric이며 정적 시나리오 목록 검사만으로 실제 model 행동 성공을 주장하지 않는다. [검증 범위](docs/VERIFICATION.md)에 실행과 한계를 분리했다.
 
 읽기 전용 PR watcher와 JSON 계획 검사도 제공한다.
@@ -100,6 +102,8 @@ python3 skills/jstack-mode/scripts/check-plan.py /absolute/path/to/personal-plan
 watcher는 PR head·check·review thread·mergeability를 읽고 READY/WAITING/BLOCKED/COMPLETE/INCONCLUSIVE를 반환한다. stack URL은 하단부터 전달한다. frontier 이동은 ADVANCE event이며 queued merge-ready는 WAITING/merge-queue로 종료한다. 조회 중 head가 변하면 미확인으로 종료한다. merge·comment·push·CI retrigger는 하지 않는다. `READY`는 관찰한 forge 상태이며 독립 코드 검토·live proof·사용자 merge 권한의 대체가 아니다.
 
 ## pstack와 달라진 점
+
+이 절부터의 원본 이름·도구·모델·프로젝트 언급은 출처와 이식 이력을 설명한다. 현재 실행 지시는 위 설치·사용 절과 `skills/`의 Codex 지침이다. [원본 조사 기록](research/UPSTREAM.md)과 inventory는 역사적 snapshot으로 보존하며 현재 도구나 설정을 지시하지 않는다.
 
 기능 보존은 원본 tool 문법·모델 역할·프로젝트 local metadata를 그대로 복사한다는 뜻이 아니다. Codex 가용 도구와 사용자가 정한 저장·권한 경계에 맞춰 결과를 보존했다. Bun/commander bootstrap, Cursor transcript 경로·전역 모델 rule, 다른 모델 panel, Cursor cloud-only 지시, Graphite 필수 조건을 제거했다. 프로그램 상태 runtime은 atomic Python/JSON helper로 바꾸고 git/gh를 기본 경로로 삼았다. Origin adapter와 Cursor watcher의 정확한 CLI flag 전부를 이식했다고 주장하지 않는다. state queue·현재 SHA·live/CI 근거·merge-ready 전달의 기능을 한국어 절차와 watcher로 제공한다.
 

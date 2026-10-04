@@ -1,6 +1,6 @@
 ---
 name: setup-jstack
-description: "Cursor 전역 모델 역할 규칙과 reasoning 예산을 설정한다. 해당 요청의 React/Next.js 작업에서 사용한다."
+description: "Codex 개인 설치·사용 가능한 도구·프로젝트 실행 명령·개인 기록 경로를 점검할 때 사용한다."
 ---
 
 # 개인 환경 점검

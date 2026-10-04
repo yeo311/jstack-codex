@@ -66,11 +66,11 @@ def read_pr(url):
     if not match: raise ValueError('정확한 github.com PR URL을 지정하세요.')
     owner,repo,number=match.groups()
     pr=gh('pr','view',url,'--json','number,url,state,isDraft,headRefOid,baseRefOid,mergeable,mergeStateStatus,statusCheckRollup,reviewDecision')
-    threads=[]; cursor=None
+    threads=[]; pagination_after=None
     query='query($owner:String!,$repo:String!,$number:Int!,$after:String){repository(owner:$owner,name:$repo){pullRequest(number:$number){headRefOid reviewThreads(first:100,after:$after){nodes{isResolved isOutdated}pageInfo{hasNextPage endCursor}}}}}'
     while True:
         args=['api','graphql','-f','query='+query,'-f','owner='+owner,'-f','repo='+repo,'-F','number='+number]
-        if cursor: args+=['-f','after='+cursor]
+        if pagination_after: args+=['-f','after='+pagination_after]
         response=gh(*args)
         if response.get('errors'): raise ValueError('review thread 조회를 확인하지 못했습니다.')
         record=response['data']['repository']['pullRequest']
@@ -78,8 +78,8 @@ def read_pr(url):
         page=record['reviewThreads']
         threads+=page['nodes']
         if not page['pageInfo']['hasNextPage']: break
-        cursor=page['pageInfo']['endCursor']
-        if not cursor: raise ValueError('review thread pagination을 확인하지 못했습니다.')
+        pagination_after=page['pageInfo']['endCursor']
+        if not pagination_after: raise ValueError('review thread pagination을 확인하지 못했습니다.')
     return pr,threads
 
 

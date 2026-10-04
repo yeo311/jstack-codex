@@ -39,3 +39,7 @@ CI는 공개 source와 generic 임시 fixture만 사용한다. 실제 개인 sta
 공식 `model/list`가 제공한 `gpt-6-luna` low를 명령에만 임시 지정해 실제 namespace 스킬 두 개를 실행했다. `how`는 코드·SHA를 조사해 내용 있는 understanding을 개인 root에 저장하고 소스 4개 hash·빈 git status를 보존했다. `architect`는 소스를 보존했지만 셸 입력 실패로 빈 plan이 남은 뒤 저장을 요약해 해당 behavior는 통과로 판정하지 않았다. 이 실패를 근거로 helper의 빈 입력·빈 replace 거부와 architect의 본문 재읽기·최종 답변의 직접 결정 질문 계약을 추가했다. 기본 모델·계정·보안 config는 변경하지 않았다. 같은 generic fixture 구조로 수정된 architect를 targeted 재검사했다. 4683 bytes의 내용 있는 개인 plan을 저장했고 helper read가 성공했다. 응답 bytes/hash와 파일을 대조했으며 대안 2개·열린 결정·첫 단위를 확인했다. 최종 답변에서도 로그인 제공자·저장소·병합·오프라인 정책을 직접 물었고 선택은 채택하지 않았다. 제품 4개 파일 hash와 빈 git status는 보존됐으며 browser/build 성공을 주장하지 않았다. 수정 전 실패와 수정 후 제한된 재검사 결과를 구분한다.
 
 현재 결정적 회귀검사는 22개다. 빈 stdin·공백·없는 입력 파일은 산출물을 생성하지 않고, 빈 `--replace`가 기존 기록을 지우지 않는지 검사한다. `--file` 입력의 backtick·달러 문자가 그대로 저장되고 UTF-8 bytes/hash가 실제 파일과 일치하는지도 확인한다. 두 성공 행동 사례(how와 수정 후 architect)는 제한된 실제 model smoke이며, 8개 rubric 전체나 실제 앱/browser/Lighthouse 통과 근거는 아니다.
+
+## 0.1.3 이식 감사
+
+[이식 감사 기록](PORTING-AUDIT.md)에 원본 설명이 검색용 description에 남았던 실제 오류와 실행 지시의 비교 문맥 정리를 기록했다. 현재 결정적 검사는 기존 22개와 재유입 검사의 5개를 합한 27개다. 135개 실행 파일 정적 감사와 독립 의미 재검토를 수행했다. 이 버전은 이전 제한된 model smoke를 새 모델 실행의 통과로 재사용하지 않으며, 전체 모델·실제 앱·브라우저·Lighthouse를 추가로 검증했다고 주장하지 않는다.

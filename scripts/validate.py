@@ -6,6 +6,7 @@ import re
 import sys
 import yaml
 import jsonschema
+from audit_runtime import audit
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -52,7 +53,9 @@ def main():
     assert expected==set(skills)
     assert len(list((ROOT/'skills/jstack-mode/playbooks').glob('*.md')))==23
     assert 'Copyright (c) 2026 Lauren Tan' in (ROOT/'LICENSE').read_text()
-    print(json.dumps({'manifest':'통과','skills':len(skills),'playbooks':23,'eval_scenarios':len(scenarios),
+    migration = audit(ROOT)
+    assert not migration['findings'], migration
+    print(json.dumps({'runtime_audit_files':migration['files_checked'], 'manifest':'통과','skills':len(skills),'playbooks':23,'eval_scenarios':len(scenarios),
                       'scope':'schema·metadata·links·역할 대응의 정적 검사. model 행동·실제 browser QA는 별도.'},ensure_ascii=False))
 
 

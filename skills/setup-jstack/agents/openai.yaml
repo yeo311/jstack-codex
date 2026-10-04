@@ -1,6 +1,6 @@
 interface:
   display_name: "개인 환경 점검"
-  short_description: "개인 환경 점검에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
-  default_prompt: "$jstack-codex:setup-jstack을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
+  short_description: "Codex 개인 설치와 도구·실행 명령·기록 경로를 실제 환경에서 점검하는 절차"
+  default_prompt: "$jstack-codex:setup-jstack으로 개인 설치, 사용 가능한 도구, 프로젝트 실행 명령과 개인 기록 경로를 점검해줘."
 policy:
   allow_implicit_invocation: false
