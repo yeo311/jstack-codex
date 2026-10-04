@@ -30,7 +30,7 @@ def main():
         assert not any(k in meta for k in ['disable-model-invocation','paths','mode','reminder']),path
         ui=yaml.safe_load((path.parent/'agents/openai.yaml').read_text())
         assert 25<=len(ui['interface']['short_description'])<=64,path
-        assert '$'+name in ui['interface']['default_prompt'],path
+        assert '$'+manifest['name']+':'+name in ui['interface']['default_prompt'],path
         assert ui['policy']['allow_implicit_invocation'] is False,path
         skills[name]=path
     assert len(skills)==47,len(skills)

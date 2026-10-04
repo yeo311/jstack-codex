@@ -1,6 +1,6 @@
 interface:
   display_name: "반복 실행과 중단 후 재실행이 같은 결과로 수렴하게 한다"
   short_description: "반복 실행과 중단 후 재실행이 같은 결과로 수렴하게 한다에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
-  default_prompt: "$principle-make-operations-idempotent을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
+  default_prompt: "$jstack-codex:principle-make-operations-idempotent을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:
   allow_implicit_invocation: false

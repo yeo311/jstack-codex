@@ -6,7 +6,7 @@
 - Python helper integration은 실제 임시 Git repository/worktree를 만들고 파일 hash·git status를 전후 대조한다. dry-run의 무파일 생성, 경로 이탈·symlink·repo 내부 저장 거부, branch 이름·worktree 공통 ID·동시 기록·정확 SHA 기록을 확인한다.
 - JSON plan verifier는 evidence 없는 완료·fake SHA·없는 dependency·순환·누락된 live/perf 기준을 거부한다.
 - PR watcher는 저장된 입력에서 draft·conflict·CI·review·unknown·queued frontier 판정을 확인한다. fixture 검사만으로 실제 GitHub PR live 상태 조회 성공을 주장하지 않는다.
-- 로컬 Codex CLI 0.156.1의 실제 `plugin list` parser가 root manifest를 인식하는 것을 확인했다. 임시 Codex home에서 marketplace add→plugin add→plugin list를 실행해 enabled 0.1.0과 cache의 47개 스킬·jstack-tdd·cached helper dry-run을 확인했다. 인증을 복사하거나 전역 settings를 변경하지 않았다. `scripts/test-install.py`로 재현한다.
+- 로컬 Codex CLI 0.156.1의 실제 `plugin list` parser가 root manifest를 인식하는 것을 확인했다. 임시 Codex home에서 marketplace add→plugin add→plugin list를 실행해 manifest와 일치하는 enabled 버전과 cache의 47개 스킬·jstack-tdd·cached helper dry-run을 확인했다. 인증을 복사하거나 전역 settings를 변경하지 않았다. `scripts/test-install.py`로 재현한다.
 
 ## 행동 평가
 
@@ -29,3 +29,9 @@ CI는 공개 source와 generic 임시 fixture만 사용한다. 실제 개인 sta
 독립 source review가 기능 보존 누락과 malformed-input parser 결함을 찾아 수정했다. why/architect/benchmark/TypeScript/personal-mode 구체 references, parity/hillclimb/eval/trace 계약, interrogate의 review-only 경계를 복원했다. 이후 narrow 독립 재검토에서 해당 blockers가 해소된 것을 확인했다.
 
 독립 지침 적용은 generic Git React fixture의 제품 파일 4개 hash와 빈 git status를 확인하고 개인 understanding·features만 helper로 저장했다. auth/저장 product 선택은 미정으로 기록하고 구현하지 않았다. browser와 앱은 미실행이며 recipe는 초안이다. 이 evidence는 제한된 실제 지침 적용이며 전체 8개 시나리오를 blind model 실험으로 통과한 결과가 아니다.
+
+## 연결된 Mac의 실제 설치 검사
+
+공개 커밋을 고정한 개인 marketplace 설치 후 모든 tracked 파일과 cache의 SHA-256을 비교했다. 기존 config는 개인 installation-backups에 백업하고 jstack marketplace/plugin 이외 TOML 값이 보존됐는지 확인했다. 실제 Codex app-server `skills/list`는 활성화된 47개 스킬을 `jstack-codex:how` 같은 namespace 이름으로 반환했다. 이를 반영해 호출 예제와 UI 기본 prompt를 전체 이름으로 맞췄다.
+
+임시 React fixture에서 실제 `$how` 모델 실행도 시도했으나 기존 CLI 설정의 `gpt-6.1-sol`을 기존 ChatGPT CLI 인증에서 지원하지 않는다는 400 응답으로 model turn 전에 중단됐다. 인증·모델·security 설정을 바꿔 우회하지 않았다. 제품 파일 4개의 hash와 빈 git status는 보존됐고 개인 state는 생성되지 않았다. 이 시도는 model 행동 통과 근거가 아니다. 8개 scenario는 정적 rubric이며 actual model 행동·live React browser·Lighthouse의 end-to-end 통과를 주장하지 않는다.

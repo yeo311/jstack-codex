@@ -1,6 +1,6 @@
 interface:
   display_name: "큰 결과는 필요한 근거와 요약만 전달한다"
   short_description: "큰 결과는 필요한 근거와 요약만 전달한다에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
-  default_prompt: "$principle-guard-the-context-window을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
+  default_prompt: "$jstack-codex:principle-guard-the-context-window을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:
   allow_implicit_invocation: false

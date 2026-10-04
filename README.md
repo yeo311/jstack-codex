@@ -37,15 +37,17 @@ codex plugin marketplace remove jstack-codex-personal
 
 ## 사용
 
+설치된 plugin 스킬은 `jstack-codex:` namespace로 탐지된다. 아래처럼 전체 이름을 쓰거나 Codex의 스킬 선택기에서 고른다. 설치 후에는 새 세션을 시작하고, 열린 선택기에 반영되지 않으면 Codex 앱을 다시 실행한다.
+
 ```text
-$jstack-mode로 이 Next.js 검색 기능을 이해하고 구현·검증해줘.
-$how로 이 화면의 route, component, state, 데이터 흐름을 설명해줘.
-$architect로 폼의 서버/클라이언트 경계를 설계해줘.
-$create-verification-skill로 개인 기능 지도와 실제 검증 절차를 만들어줘.
-$recall로 현재 작업의 완료·남은 일·다음 행동을 정리해줘.
+$jstack-codex:jstack-mode로 이 Next.js 검색 기능을 이해하고 구현·검증해줘.
+$jstack-codex:how로 이 화면의 route, component, state, 데이터 흐름을 설명해줘.
+$jstack-codex:architect로 폼의 서버/클라이언트 경계를 설계해줘.
+$jstack-codex:create-verification-skill로 개인 기능 지도와 실제 검증 절차를 만들어줘.
+$jstack-codex:recall로 현재 작업의 완료·남은 일·다음 행동을 정리해줘.
 ```
 
-원본의 대부분 스킬이 명시 호출 방식이어서 `agents/openai.yaml`의 `allow_implicit_invocation: false`로 이식을 명시했다. `$jstack-mode`를 호출하면 해당 작업에 필요한 스킬·원칙·절차만 읽도록 연결한다. 모든 원칙을 매 작업에서 전부 로드하지 않는다. 작은 수정은 직접 진행하고 큰 독립 조사·구현·검토는 가용 Codex 내부 agent에 분업한다. model 인수·외부 모델 API를 사용하지 않는다. 동일 모델 독립 검토는 다중 모델 다양성과 같은 보장이 아니다.
+원본의 대부분 스킬이 명시 호출 방식이어서 `agents/openai.yaml`의 `allow_implicit_invocation: false`로 이식을 명시했다. `$jstack-codex:jstack-mode`를 호출하면 해당 작업에 필요한 스킬·원칙·절차만 읽도록 연결한다. 모든 원칙을 매 작업에서 전부 로드하지 않는다. 작은 수정은 직접 진행하고 큰 독립 조사·구현·검토는 가용 Codex 내부 agent에 분업한다. model 인수·외부 모델 API를 사용하지 않는다. 동일 모델 독립 검토는 다중 모델 다양성과 같은 보장이 아니다.
 
 현재 설치된 스킬의 절대 위치에서 `skills/jstack-mode/scripts/`를 찾는다. clone과 cache 모두 같은 상대 구조이며 runtime helper는 Python3 표준 라이브러리와 git만 필요하다. GitHub PR watcher는 기존 `gh` 접근 권한이 있을 때 사용한다. 임의 dependency·계정·서비스를 설치하거나 인증하지 않는다.
 

@@ -1,6 +1,6 @@
 interface:
   display_name: "불가능한 상태를 막는 자료형과 외부 입력 검증을 사용한다"
   short_description: "불가능한 상태를 막는 자료형과 외부 입력 검증을 사용한다에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
-  default_prompt: "$principle-type-system-discipline을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
+  default_prompt: "$jstack-codex:principle-type-system-discipline을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:
   allow_implicit_invocation: false

@@ -25,7 +25,7 @@ def main():
         listed=run('plugin','list','--marketplace','jstack-codex-personal','--available','--json')
         assert len(listed['installed'])==1,listed
         item=listed['installed'][0]
-        assert item['name']=='jstack-codex' and item['version']=='0.1.0' and item['enabled'] is True,item
+        assert item['name']=='jstack-codex' and item['version']==json.loads((ROOT/'plugin.json').read_text())['version'] and item['enabled'] is True,item
         manifests=list(test_codex_home.rglob('plugin.json'))
         package_roots=[p.parent for p in manifests if json.loads(p.read_text()).get('name')=='jstack-codex' and (p.parent/'skills').exists()]
         assert package_roots,'설치 cache 없음'
