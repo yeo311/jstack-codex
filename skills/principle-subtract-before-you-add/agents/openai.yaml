@@ -1,5 +1,5 @@
 interface:
-  display_name: "불필요한 코드·검사를 정리한 뒤 필요한 것을 추가한다"
+  display_name: "principle-subtract-before-you-add"
   short_description: "불필요한 코드·검사를 정리한 뒤 필요한 것을 추가한다에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
   default_prompt: "$jstack-codex:principle-subtract-before-you-add을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:

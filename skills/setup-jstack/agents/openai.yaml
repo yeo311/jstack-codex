@@ -1,5 +1,5 @@
 interface:
-  display_name: "개인 환경 점검"
+  display_name: "setup-jstack"
   short_description: "Codex 개인 설치와 도구·실행 명령·기록 경로를 실제 환경에서 점검하는 절차"
   default_prompt: "$jstack-codex:setup-jstack으로 개인 설치, 사용 가능한 도구, 프로젝트 실행 명령과 개인 기록 경로를 점검해줘."
 policy:

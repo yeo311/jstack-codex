@@ -26,7 +26,7 @@ codex plugin marketplace add ./jstack-codex
 codex plugin add jstack-codex@jstack-codex-personal
 ```
 
-`plugin.json`은 Agent Plugins 1.0.0 root manifest다. `skills/`는 자동 탐지되며 `extensions.com.openai`에 한국어 UI metadata만 둔다. `.codex-plugin` overlay·MCP·hooks·자동 package bootstrap은 없다. CLI는 설치 cache를 읽으므로 source를 수정했다면 marketplace upgrade와 재설치 흐름으로 새 파일을 확인한다. 설치는 개인 marketplace/plugin 항목을 추가하며 모델·sandbox·network·auth를 변경하지 않는다. 기존 설정은 보존한다.
+`plugin.json`은 Agent Plugins 1.0.0 root manifest다. `skills/`는 자동 탐지되며 `extensions.com.openai`에 UI metadata만 둔다. `.codex-plugin` overlay·MCP·hooks·자동 package bootstrap은 없다. CLI는 설치 cache를 읽으므로 source를 수정했다면 marketplace upgrade와 재설치 흐름으로 새 파일을 확인한다. 설치는 개인 marketplace/plugin 항목을 추가하며 모델·sandbox·network·auth를 변경하지 않는다. 기존 설정은 보존한다.
 
 `main`을 추적하는 Git marketplace는 `codex plugin marketplace upgrade jstack-codex-personal`로 갱신한 뒤 재설치한다. 전체 SHA로 고정한 등록의 SHA를 바꿀 때 Codex 0.156.1은 같은 marketplace를 다른 source로 취급한다. 기존 config를 개인 경로에 백업하고 아래 개인 등록 제거 후 새 SHA로 marketplace add·plugin add를 실행한다. 다른 marketplace와 plugin은 건드리지 않는다.
 
@@ -38,6 +38,8 @@ codex plugin marketplace remove jstack-codex-personal
 ```
 
 ## 사용
+
+스킬 선택기의 표시명은 `how`, `architect`, `blast-radius`처럼 영문 스킬명으로 표시한다. 승인한 `jstack-tdd`, `jstack-mode`, `setup-jstack` 이름은 유지한다. 설명·본문·작업 절차는 한국어이며 내부 ID와 호출 namespace는 바뀌지 않는다.
 
 설치된 plugin 스킬은 `jstack-codex:` namespace로 탐지된다. 아래처럼 전체 이름을 쓰거나 Codex의 스킬 선택기에서 고른다. 설치 후에는 새 세션을 시작하고, 열린 선택기에 반영되지 않으면 Codex 앱을 다시 실행한다.
 

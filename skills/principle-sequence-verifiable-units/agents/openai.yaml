@@ -1,5 +1,5 @@
 interface:
-  display_name: "작은 검증 단위로 순서를 만들고 매 단위 결과를 확인한다"
+  display_name: "principle-sequence-verifiable-units"
   short_description: "작은 검증 단위로 순서를 만들고 매 단위 결과를 확인한다에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
   default_prompt: "$jstack-codex:principle-sequence-verifiable-units을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:

@@ -1,5 +1,5 @@
 interface:
-  display_name: "호출 층과 숨은 상태를 줄여 코드를 읽기 쉽게 한다"
+  display_name: "principle-minimize-reader-load"
   short_description: "호출 층과 숨은 상태를 줄여 코드를 읽기 쉽게 한다에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
   default_prompt: "$jstack-codex:principle-minimize-reader-load을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:

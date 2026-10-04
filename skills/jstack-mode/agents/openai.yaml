@@ -1,5 +1,5 @@
 interface:
-  display_name: "jstack 작업 모드"
+  display_name: "jstack-mode"
   short_description: "jstack 작업 모드에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
   default_prompt: "$jstack-codex:jstack-mode을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:

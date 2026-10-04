@@ -30,6 +30,7 @@ def main():
         assert body.strip() and re.search('[가-힣]',body),path
         assert not any(k in meta for k in ['disable-model-invocation','paths','mode','reminder']),path
         ui=yaml.safe_load((path.parent/'agents/openai.yaml').read_text())
+        assert ui['interface']['display_name']==name,path
         assert 25<=len(ui['interface']['short_description'])<=64,path
         assert '$'+manifest['name']+':'+name in ui['interface']['default_prompt'],path
         assert ui['policy']['allow_implicit_invocation'] is False,path
@@ -55,7 +56,7 @@ def main():
     assert 'Copyright (c) 2026 Lauren Tan' in (ROOT/'LICENSE').read_text()
     migration = audit(ROOT)
     assert not migration['findings'], migration
-    print(json.dumps({'runtime_audit_files':migration['files_checked'], 'manifest':'통과','skills':len(skills),'playbooks':23,'eval_scenarios':len(scenarios),
+    print(json.dumps({'runtime_audit_files':migration['files_checked'], 'manifest':'통과','english_display_names':len(skills),'skills':len(skills),'playbooks':23,'eval_scenarios':len(scenarios),
                       'scope':'schema·metadata·links·역할 대응의 정적 검사. model 행동·실제 browser QA는 별도.'},ensure_ascii=False))
 
 

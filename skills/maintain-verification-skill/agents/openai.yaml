@@ -1,5 +1,5 @@
 interface:
-  display_name: "기능 지도 유지"
+  display_name: "maintain-verification-skill"
   short_description: "기능 지도 유지에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
   default_prompt: "$jstack-codex:maintain-verification-skill을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:

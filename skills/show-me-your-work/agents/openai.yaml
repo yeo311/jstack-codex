@@ -1,5 +1,5 @@
 interface:
-  display_name: "판단 기록"
+  display_name: "show-me-your-work"
   short_description: "판단 기록에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
   default_prompt: "$jstack-codex:show-me-your-work을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:

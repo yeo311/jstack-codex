@@ -1,5 +1,5 @@
 interface:
-  display_name: "새 요구를 처음부터 있던 제약처럼 설계에 반영한다"
+  display_name: "principle-redesign-from-first-principles"
   short_description: "새 요구를 처음부터 있던 제약처럼 설계에 반영한다에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
   default_prompt: "$jstack-codex:principle-redesign-from-first-principles을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:

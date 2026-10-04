@@ -1,5 +1,5 @@
 interface:
-  display_name: "작은 변경과 삭제를 먼저 고려한다"
+  display_name: "principle-laziness-protocol"
   short_description: "작은 변경과 삭제를 먼저 고려한다에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
   default_prompt: "$jstack-codex:principle-laziness-protocol을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:

@@ -1,5 +1,5 @@
 interface:
-  display_name: "구현 형태 대신 사용자가 관찰하는 동작을 검사한다"
+  display_name: "principle-test-behavior-not-implementation"
   short_description: "구현 형태 대신 사용자가 관찰하는 동작을 검사한다에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
   default_prompt: "$jstack-codex:principle-test-behavior-not-implementation을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:

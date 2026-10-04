@@ -1,5 +1,5 @@
 interface:
-  display_name: "완료 전에 실제 결과물과 사용자 경로로 확인한다"
+  display_name: "principle-prove-it-works"
   short_description: "완료 전에 실제 결과물과 사용자 경로로 확인한다에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
   default_prompt: "$jstack-codex:principle-prove-it-works을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:

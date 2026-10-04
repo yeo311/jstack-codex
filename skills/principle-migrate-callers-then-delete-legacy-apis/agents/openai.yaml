@@ -1,5 +1,5 @@
 interface:
-  display_name: "사용처를 옮긴 뒤 오래된 내부 API를 삭제한다"
+  display_name: "principle-migrate-callers-then-delete-legacy-apis"
   short_description: "사용처를 옮긴 뒤 오래된 내부 API를 삭제한다에 맞춰 실제 근거와 사용자 결과를 확인하는 작업 절차"
   default_prompt: "$jstack-codex:principle-migrate-callers-then-delete-legacy-apis을 사용해 관련 작업을 진행하고 실제 검증 결과를 알려줘."
 policy:
